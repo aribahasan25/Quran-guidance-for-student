@@ -12,6 +12,7 @@
       background: url(OIP.webp) no-repeat center center fixed;
       background-size: cover;
       color: #333;
+      transition: background 0.4s, color 0.4s;
     }
     header {
       background: rgba(0, 51, 102, 0.85);
@@ -34,13 +35,16 @@
       padding: 30px;
       margin: 20px auto;
       width: 80%;
-      background: rgba(255, 255, 255, 0.85);
+      background: rgba(255, 255, 255, 0.9);
       border-radius: 10px;
       box-shadow: 0 0 15px rgba(0,0,0,0.2);
     }
     h2 {
       color: #003366;
       text-align: center;
+    }
+    h3 {
+      color: #222;
     }
     ul {
       line-height: 1.8;
@@ -74,30 +78,45 @@
     th, td {
       padding:10px;
       border: 1px solid #ccc;
-      background: rgba(255, 255, 255, 0.9);
+      background: rgba(255, 255, 255, 0.95);
     }
     th {
       background-color:#003366;
       color:white;
     }
     footer {
-      background-image:url(download.webp);
-      color:white;
-      text-align: center;
-      padding: 15px;
-      margin-top: 25px;
-    }
+  position: relative;
+  background: url("download.webp") no-repeat center center/cover;
+  color: white;
+  text-align: center;
+  padding: 15px;
+  margin-top: 25px;
+  z-index: 1;
+}
+
+footer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.5); /* 0.5 = light effect */
+  z-index: -1;
+}
+
   </style>
 </head>
 <body>
   <header>
     <h1>Quran as Guidance for Students</h1>
-  <p>Learn Discipline, Self-Control, and Balance through Quran</p>
+    <p>Learn Discipline, Self-Control, and Balance through Quran</p>
   </header>
 
   <nav>
     <a href="#tips">Tips</a>
     <a href="#verses">Quran Verses</a>
+    <a href="#surahs">Surahs</a>
     <a href="#special">Special Section</a>
   </nav>
 
@@ -107,11 +126,11 @@
     <ul id="tipList">
       <li>Manage your time with punctuality.</li>
       <li>Control anger and practice patience.</li>
-      <li> Balance Deen and Dunya.</li>
-      <li> Focus on learning with self-control.</li>
+      <li>Balance Deen and Dunya.</li>
+      <li>Focus on learning with self-control.</li>
       <li>Use social media wisely and avoid wasting time.</li>
-      <li> Work hard, then trust (Tawakkul) in Allah.</li>
-      <li>Study with intentions,work with consistency,earn success and sawab</li>
+      <li>Work hard, then trust (Tawakkul) in Allah.</li>
+      <li>Study with intentions, work with consistency, earn success and sawab</li>
     </ul>
     <button onclick="showTip()">Show Random Tip</button>
     <p id="randomTip">Click the button to get a random tip!</p>
@@ -120,36 +139,100 @@
   <!-- Quran Verses -->
   <section id="verses">
     <h2>Motivational Quran Verses with Lessons</h2>
-
     <table id="verseTable">
       <tr>
         <th>Quran Verse</th>
         <th>Lesson</th>
       </tr>
-      <tr style="background-color: rgba(255,255,255,0.85);">
+      <tr>
         <td>Indeed, with hardship comes ease. (94:6)</td>
         <td>Never lose hope; every difficulty has ease.</td>
       </tr>
-      <tr style="background-color: rgba(255,255,255,0.9);">
+      <tr>
         <td>Do not despair of the mercy of Allah. (39:53)</td>
         <td>Even after mistakes, keep hope alive.</td>
       </tr>
-      <tr style="background-color: rgba(255,255,255,0.85);">
+      <tr>
         <td>So be patient. Indeed, Allah is with the patient. (2:153)</td>
         <td>Patience is key; Allah supports the patient.</td>
       </tr>
-      <tr style="background-color: rgba(255,255,255,0.9);">
+      <tr>
         <td>Indeed, Allah loves those who rely upon Him. (3:159)</td>
         <td>Do your best and trust Allah (Tawakkul).</td>
       </tr>
-      <tr style="background-color: rgba(255,255,255,0.85);">
+      <tr>
         <td>And establish prayer; it prohibits immorality. (29:45)</td>
         <td>Regular prayers help control bad habits and focus your life.</td>
       </tr>
     </table>
-
     <button onclick="highlightRandomVerse()">Show Random Verse & Lesson</button>
     <p id="randomVerse">Click the button to highlight a random verse!</p>
+  </section>
+
+  <!-- Surahs Section -->
+  <section id="surahs">
+    <h2>Some Surahs with Behind the story & Audio</h2>
+    <h3>1. Surah Al-Fatiha (The Opening)</h3>
+    <p><b>Meaning:</b> Surah Al-Fatiha is a prayer for guidance, mercy, and steadfastness on the straight path. It reminds us that all praise belongs to Allah, the Lord of the Worlds, and teaches us to seek His help and forgiveness in every matter of life.</p>
+    <audio controls>
+      <source src="Surah Al-Fatihah (The Opener) _ سورۃ الفاتحہ (اوپنر) - Surah 001 [ugtZcdpx7mQ].mp3" type="audio/mp3">
+    </audio>
+
+    <h3>2. Surah An-Nisa (The Women)</h3>
+    <p><b>Meaning:</b> This Surah gives guidance on social justice, rights of women, inheritance laws, family responsibilities, and building a society on fairness. It also stresses the importance of faith, avoiding hypocrisy, and standing firm for truth and justice.</p>
+    <audio controls>
+      <source src="Surah 004_ Surah An-Nisa (The Women) -  سورۃ النساء.mp3" type="audio/mp3">
+    </audio>
+
+    <h3>3. Surah Az-Zalzalah (The Earthquake)</h3>
+    <p><b>Meaning:</b> This Surah describes the great earthquake of the Day of Judgment when the earth will reveal all deeds of mankind. It emphasizes accountability and reminds us that even the smallest good or bad action will be shown to us.</p>
+    <audio controls>
+      <source src="Surah Az-Zalzalah (99) The Ultimate Quake - سورة الزلزلة.mp3" type="audio/mp3">
+    </audio>
+
+    <h3>4. Surah Al-Adiyat (The Chargers)</h3>
+    <p><b>Meaning:</b> This Surah uses the imagery of fast horses in battle to highlight human ingratitude towards Allah. It warns people against excessive love for wealth and reminds them of the consequences on the Day of Resurrection.</p>
+    <audio controls>
+      <source src="Surat_100 Al-Adiyat (The Courser)  سورۃ الادیات (1).mp3" type="audio/mp3">
+    </audio>
+
+    <h3>5. Surah Al-Ma'un (Small Kindnesses)</h3>
+    <p><b>Meaning:</b> The Surah criticizes those who ignore the poor, neglect prayers, and perform worship only to show off. It teaches that true faith is not just prayer but also showing kindness, helping the needy, and being sincere in worship.</p>
+    <audio controls>
+      <source src="Surat 107_ Al-Ma'un (The Simplest Aid) - سورة الماعون.mp3" type="audio/mp3">
+    </audio>
+
+    <h3>6. Surah An-Nasr (Divine Support)</h3>
+    <p><b>Meaning:</b> This Surah was revealed towards the end of the Prophet’s (ﷺ) life. It signifies the victory of Islam and the spread of people entering into the religion in large numbers. It teaches us to glorify Allah and seek forgiveness after success.</p>
+    <audio controls>
+      <source src="Surat 110_ An-Nasr (The Ultimate Help) - سورة النصر.mp3" type="audio/mp3">
+    </audio>
+
+    <h3>7. Surah Al-Falaq (Daybreak)</h3>
+    <p><b>Meaning:</b> This Surah is a supplication for Allah’s protection against all forms of evil — darkness, witchcraft, jealousy, and harm that exists in the world. It reminds us to seek refuge in Allah for safety and peace.</p>
+    <audio controls>
+      <source src="Surat 113_ Al-Falaq (The Daybreak) - سورة الفلق [hokYB5ybX1A].mp3" type="audio/mp3">
+    </audio>
+
+    <h3>8. Surah An-Nas (Mankind)</h3>
+    <p><b>Meaning:</b> This Surah teaches us to seek refuge in Allah, the Lord of mankind, from the whispers of Shaytan and hidden evils. It highlights that only Allah can protect us from spiritual harm and negative influences.</p>
+    <audio controls>
+      <source src="Surah 114_ An-Nâs (Humankind) - سورة الناس  Surah in Urdu.mp3" type="audio/mp3">
+    </audio>
+
+    <h3>9. Surah Quraysh (Quraysh Tribe)</h3>
+    <p><b>Meaning:</b> This Surah reminds the Quraysh tribe of the blessings of safety and provision granted to them by Allah. It teaches gratitude and emphasizes the importance of worshipping Allah, who alone provides food and security.</p>
+    <audio controls>
+      <source src="Surat 106_ Al-Quraish (The People of Quraish) - سورة قريش  Urdu Translation.mp3" type="audio/mp3">
+    </audio>
+
+    <h3>10. Surah Al-Qariah (The Calamity)</h3>
+    <p><b>Meaning:</b> This Surah gives a vivid description of the Day of Judgment, where people’s deeds will be weighed. It warns that those with heavy good deeds will be in peace, while those with light deeds will face severe consequences.</p>
+    <audio controls>
+      <source src="Surat 101_ Al-Qâri'ah (The Striking Disaster) - سورة القارعة.mp3"type=audio/mp3">
+    </audio>
+
+   <p style="color: green; font-weight: bold;">References: YouTube channel of Owaish Muhammad Mushtak</p>
   </section>
 
   <!-- Special Section -->
@@ -166,17 +249,17 @@
 
   <!-- Footer -->
   <footer>
-    <p>Made for Students | Quran as Guidance</p>
-    <p>Developed by Ariba | Sorry if there are any mistakes, Allah forgive me <span style="font-size:1.2em;">&#128578;</span></p>
-  </footer>
+    <p style="color: blue; font-weight: bold;"><h2> All information taken from internet. I am not a scholar. If any mistake, may Allah forgive us.</h2></p>
+<p style ="color:blue; font-weight: bold;"><h3>Designed by Ariba Hasan<h3></p>
+    </footer>
 
   <script>
     const tips = [
-      " Manage your time with punctuality.",
-      " Control anger and practice patience.",
-      " Balance Deen and Dunya.",
-      " Focus on learning with self-control.",
-      " Use social media wisely and avoid wasting time.",
+      "Manage your time with punctuality.",
+      "Control anger and practice patience.",
+      "Balance Deen and Dunya.",
+      "Focus on learning with self-control.",
+      "Use social media wisely and avoid wasting time.",
       "Work hard, then trust (Tawakkul) in Allah."
     ];
 
@@ -189,15 +272,13 @@
       const table = document.getElementById("verseTable");
       const rows = table.getElementsByTagName("tr");
 
-
       for(let i = 1; i < rows.length; i++) {
-        rows[i].style.backgroundColor = i % 2 === 0 ? "rgba(255,255,255,0.9)" : "rgba(255,255,255,0.85)";
+        rows[i].style.backgroundColor = "rgba(255,255,255,0.95)";
       }
 
       const randomIndex = Math.floor(Math.random() * (rows.length - 1)) + 1;
-      rows[randomIndex].style.backgroundColor = "#ffeb3b"; // highlight yellow
+      rows[randomIndex].style.backgroundColor = "#ffeb3b";
 
-    
       const verseText = rows[randomIndex].cells[0].innerText;
       const lessonText = rows[randomIndex].cells[1].innerText;
       document.getElementById("randomVerse").innerText = `${verseText} → ${lessonText}`;
